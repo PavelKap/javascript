@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let answer = Math.round(Math.random() * 10);
+
+		function choose(){
+			let choise = +prompt("Угадайте число от 0 до 10. Играем?  1-да 2-нет");
+			choise === 1 ? game () : alert ("Не играем");
+		}
+
+		choose();
+
+		function game(){
+			let user = +prompt("Введите число");
+			if (user > answer){
+				console.log (`Вы ввели ${user} это число больше загаданного`);
+				game();
+			} else if (user < answer){
+				console.log (`Вы ввели ${user} это число меньше загаданного`);
+				game();
+			} else if (user === answer){
+				console.log ("Угадали");
+				choose();
+			} else {
+				console.log ("Вводите только числа");
+				choose();
+			}
+		}
+	</script>
+</body>
+</html>

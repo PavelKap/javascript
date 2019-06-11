@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//задание №3
+
+		let a = +prompt("Введите положительное или отрицательное число");
+		let b = +prompt("Введите положительное или отрицательное число");
+		if(a > 0 && b > 0){
+			var c = a - b;
+			console.log (c);
+		}	else if (a < 0 && b < 0) {
+			c = a * b;
+			console.log (c);
+		} else if (a < 0 && b > 0 || a > 0 && b < 0){
+			c = a + b;
+			console.log (c);
+		}
+		else {
+			console.log ("Вводите только числа");
+		}
+
+	</script>
+	<script>
+		//задание 5-6
+
+		function sum (a, b){
+			return a + b;
+		}
+		function dif (a, b){
+			return a - b;
+		}
+		function mult (a, b){
+			return a * b;
+		}
+		function div (a, b){
+			return a / b;
+		}
+
+		let op = +prompt("введите 1-для складывания 2-для вычитания 3-для умножения 4-для деления")
+
+		function mathOperation(a, b, op){
+			switch (op){
+				case 1:
+				return sum(a, b);
+				case 2:
+				return dif(a, b);
+				case 3:
+				return mult(a, b);
+				case 4:
+				return div(a, b);
+				default:
+				return "Вводите число от 1 до 4";
+			}
+		}
+
+		console.log (mathOperation(a, b, op));
+	</script>
+	<script>
+		//задание 4
+
+		let z = +prompt("Введите число от 0 до 15");
+		let mas = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+		switch (z){
+			case 0:
+			console.log (mas.splice(0));
+			break;
+
+			case 1:
+			console.log (mas.splice(1));
+			break;
+
+			case 2:
+			console.log (mas.splice(2));
+			break;
+			
+			case 3:
+			console.log (mas.splice(3));
+			break;
+			case 4:
+			console.log (mas.splice(4));
+			break;
+			case 5:
+			console.log (mas.splice(5));
+			break;
+			case 6:
+			console.log (mas.splice(6));
+			break;
+			case 7:
+			console.log (mas.splice(7));
+			break;
+			case 8:
+			console.log (mas.splice(8));
+			break;
+			case 9:
+			console.log (mas.splice(9));
+			break;
+			case 10:
+			console.log (mas.splice(10));
+			break;
+			case 11:
+			console.log (mas.splice(11));
+			break;
+			case 12:
+			console.log (mas.splice(12));
+			break;
+			case 13:
+			console.log (mas.splice(13));
+			break;
+			case 14:
+			console.log (mas.splice(14));
+			break;
+			case 15:
+			console.log (mas.splice(15));
+			break;
+			
+		}
+	</script>
+</body>
+</html>
