@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const answers = ["да", "нет", "не знаю"];
+
+		var question = prompt("Задавайте свой вопрос, ответом на который может быть да или нет");
+		var answer = compBall();
+		console.log(`Вы спросили ${question}`);
+		console.log(`Компьютер дал ответ ${answer}`);
+		
+		function compBall(){	
+			var t = Math.random();
+			if(t<0.3){
+				answer = answers[0];
+			} else if(t>0.3 && t<0.7){
+				answer = answers[1];
+			} else if(t>0.7){
+				answer = answers[2];
+			}
+			return answer;
+		}
+
+	</script>
+</body>
+</html>
