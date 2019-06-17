@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		var num = prompt("Введите любое число от 0 до 999");
+		
+		var arrNum = [];
+		var number = {};
+		getArr();
+	
+		function getArr(){
+			arrNum = num.split(``);
+			if(arrNum.length == 1){
+				arrNum.unshift(0, 0);
+			} else if(arrNum.length == 2){
+				arrNum.unshift(0);
+			} 
+		}
+
+		function getNumber(){
+		 	number.unit = arrNum[2];
+			number.tens = arrNum[1];
+			number.hundred = arrNum[0];
+		}
+
+		if(num > 999){
+			console.log("Вы ввели число больше, чем 999. Внимательнее");
+			console.log (number);
+		} else if (num <= 999){
+			 getNumber();
+			 console.log (number);
+		} 
+
+	</script>
+</body>
+</html>
