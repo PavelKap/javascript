@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const play = ["камень", "ножницы", "бумага"];
+
+		var player = prompt("Выберите камень, ножницы или бумага");
+		var computer = compHand();
+		console.log(`Вы выбрали ${player}`);
+		console.log(`Компьютер выбрал ${computer}`);
+		
+		function compHand(){	
+			var t = Math.random();
+			if(t<0.3){
+				computer = play[0];
+			} else if(t>0.3 && t<0.7){
+				computer = play[1];
+			} else if(t>0.7){
+				computer = play[2];
+			}
+			return computer;
+		}
+
+		if (player == play[0] && computer == play[2]){
+			console.log(`Вы проиграли`);
+		} else if (player == play[1] && computer == play[0]){
+			console.log(`Вы проиграли`);
+		} else if(player == play[2] && computer == play[1]){
+			console.log(`Вы проиграли`);
+		} else if(player == computer){
+			console.log(`Ничья`);
+		} else {
+			console.log(`Вы выиграли`);
+		}
+	</script>
+</body>
+</html>
