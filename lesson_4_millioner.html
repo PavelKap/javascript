@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		var rightAnswers = 0;
+		
+		var answers = {
+			answer1: 4,
+			answer2: 2,
+			answer3: 1,
+			checkAnswer: function(answer){
+				if(question == answer){
+					alert("Ответ верный");
+					rightAnswers++;
+				} else {
+					alert("Ответ не верный")
+				}
+			}
+		}
+
+		var question = +prompt("Столица России: 1 - Санкт-Петербург 2 - Екатеринбург 3 - Владивосток 4 - Москва");
+			answers.checkAnswer(answers.answer1);
+		var question = +prompt("Что несет курица: 1 - Бред 2 - Яйцо 3 - Посылка 4 - Истина");
+			answers.checkAnswer(answers.answer2);
+		var question = +prompt("Алгоритм сортировки массива: 1 - Сортировка пузырьком 2 - Сортировка волной 3 - Сортировка индиго 4 - Рандомная сортировка");
+			answers.checkAnswer(answers.answer3);
+		
+		alert(`Вы ответили правильно на ${rightAnswers} вопроса`);
+		
+	</script>
+</body>
+</html>
