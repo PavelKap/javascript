@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.block{
+			width:50px; 
+			height:50px;
+			text-align: center;
+			font-size: 40px;
+			float:left
+		}
+		.black{
+			background-color: grey;
+		}
+	</style>
+</head>
+<body>
+	<div id="board" style= "width:500px; height:500px; margin:0 auto; border: 1px solid black">
+		
+
+	</div>
+	<script>
+		var chess = {
+
+			board : document.querySelector("#board"),
+			
+			chess_board: function(){
+				const num = [0, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+    			const leters = [0, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 0];
+				for(var i=0; i<num.length; i++){
+					for(var j=0; j<leters.length; j++){
+						var blocks = document.createElement('div');
+						blocks.classList.add('block');
+						this.board.appendChild(blocks);
+						if (num[i] === 0 && leters[j] !== 0) {
+          					blocks.innerHTML = leters[j];
+       					 } else if (leters[j] === 0 && num[i] !== 0) {
+          					blocks.innerHTML = num[i];
+       					 }	
+
+       					 if (num[i] == 0 || leters[j] == 0) {
+          					blocks.classList.add('white');
+						} else if (num[j] % 2 == 0 && num[i] % 2 == 0 || num[j] % 2 == 1 && num[i] % 2 == 1){
+							blocks.classList.add('white')
+						} else{
+							blocks.classList.add('black')
+						}
+
+						this.figure(num[i], leters[j], blocks);
+						
+					}
+				}
+			},
+
+			figure: function(num, letters, block){
+				if(num==7 && letters !== 0){
+					block.innerHTML = '&#9817';
+				} else if(num == 2 && letters !==0){
+					block.innerHTML = '&#9823;'
+				} 
+
+				if (num == 8){
+					if (letters == 'A'){
+						block.innerHTML = '&#9814;'
+					} else if (letters == 'H'){
+						block.innerHTML = '&#9814;'
+					}else if (letters == 'B'){
+						block.innerHTML = '&#9816;'
+					}else if (letters == 'G'){
+						block.innerHTML = '&#9816;'
+					}else if (letters == 'C'){
+						block.innerHTML = '&#9815;'
+					}else if (letters == 'F'){
+						block.innerHTML = '&#9815;'
+					}else if (letters == 'D'){
+						block.innerHTML = '&#9813;'
+					}else if (letters == 'E'){
+						block.innerHTML = '&#9812;'
+					}
+				}
+				if (num == 1){
+					if (letters == 'A'){
+						block.innerHTML = '&#9820;'
+					} else if (letters == 'H'){
+						block.innerHTML = '&#9820;'
+					}else if (letters == 'B'){
+						block.innerHTML = '&#9822;'
+					}else if (letters == 'G'){
+						block.innerHTML = '&#9822;'
+					}else if (letters == 'C'){
+						block.innerHTML = '&#9821;'
+					}else if (letters == 'F'){
+						block.innerHTML = '&#9821;'
+					}else if (letters == 'D'){
+						block.innerHTML = '&#9818;'
+					}else if (letters == 'E'){
+						block.innerHTML = '&#9819;'
+					}
+				}
+				
+				
+			}
+		}
+
+		chess.chess_board()
+
+	</script>
+
+</body>
+</html>
