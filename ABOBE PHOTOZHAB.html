@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ABOBE PHOTOZHAB</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.head {
+			margin: 0 auto;
+			width: 1100px;
+			margin-top: 30px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border: 1px solid black;
+			border-radius: 25px;
+			background-color: #3FCDBE;
+		}
+		#canv {
+			width: 1000px; 
+			height: 800px; 
+			border: 1px solid black;
+			border-radius: 25px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			margin-top: 25px;
+			background-color: white;
+		}
+
+		.tools {
+			width: 1000px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.buttons {
+			width: 575px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.tool-button{
+			width: 49px;
+			height: 40px;
+			background-color: #fff;
+			border: 1px solid black;
+			border-radius: 15px;
+			outline: none;
+		}
+
+		.tool-button:hover {
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		}
+
+		.tool-button:focus{
+			background-color: grey;
+		}
+
+		#size-select {
+			border: 1px solid black;
+			border-radius: 15px;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+<div class="head">
+	<div class="tools">	
+		<div class="buttons">
+			<button class="tool-button" id='pencil'><i class="fas fa-pencil-alt"></i></button>
+			<button class="tool-button" id='brush'><i class="fas fa-paint-brush"></i></button>
+			<button class="tool-button" id='eraser'><i class="fas fa-eraser"></i></button>
+			<button class="tool-button" id='fill'><i class="fas fa-fill-drip"></i></button>
+			<button class="tool-button" id='rectangle'><i class="far fa-square"></i></button>
+			<button class="tool-button" id='spray'><i class="fas fa-spray-can"></i></button>
+			<button class="tool-button" id='save'><i class="far fa-save"></i></button>
+			
+			<select id='size-select'>
+				<option>10</option>
+				<option>15</option>
+				<option>20</option>
+			</select>
+
+			<input type="color" id="color">
+		</div>
+		<div class="coordinates">
+			<p id="x"><b>x: </b> <span id="xCoord"></span></p>
+			<p id="y"><b>y: </b> <span id="yCoord"></span></p>
+			<br>
+		</div>
+	</div>		
+	<div class="canv">
+		<canvas id="canv" width="1000" height="800"></canvas> 
+	</div>
+</div>
+	<script src="script.js"></script>
+</body>
+</html>
